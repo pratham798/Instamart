@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+  color: var(--dark-font-color);
+  background-color: var(--primary-bg-color);
+  font-size: var(--h4-size);
+  font-weight: var(--bold-font-weight);
+  box-shadow: 0 1rem 4rem 0 rgba(19, 46, 112, 0.1);
+  padding: 1.2rem;
+  width: 100%;
+
+  &.sticky {
+    position: fixed;
+    animation: slide-in 360ms ease-in 1 alternate forwards;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: var(--h5-size);
+  }
+}
+
+.logo {
+  width: 3rem;
+  height: auto;
+
+  @media screen and (max-width: 768px) {
+    width: 2rem;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
