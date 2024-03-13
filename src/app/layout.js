@@ -1,5 +1,5 @@
 import { Providers } from './_store/provider';
-import Header from './_lib/components/header/Header';
+import Header from './_lib/components/Header/Header';
 
 import './styles/typography.css';
 

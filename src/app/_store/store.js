@@ -1,10 +1,10 @@
 "use client";
 
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import cartReducer from './reducers/cartReducer';
+import orderReducer from './reducers/orderReducer';
 
 const shoppingReducer = combineReducers({
-  cart: cartReducer,
+  order: orderReducer,
 });
 
 export const store = configureStore({
