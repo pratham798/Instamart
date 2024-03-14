@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  border-top: 0.05rem solid #c5ccd6;
+
+  @media screen and (max-width: 768px) {
+    padding: 1.2rem;
+  }
+}
+
+.product {
+  position: relative;
+  flex-shrink: 0;
+  height: 7rem;
+  width: 8rem;
+  border-radius: 0.4rem;
+
+  @media screen and (max-width: 768px) {
+    height: 5rem;
+    width: 6rem;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.2rem;
+  font-size: var(--h6-size);
+  font-weight: var(--default-font-weight);
+  color: var(--dark-font-color);
+
+  @media screen and (max-width: 768px) {
+    font-size: var(--h7-size);
+  }
+}
+
+.right {
+  cursor: pointer;
+}
+
+.right:hover {
+  transform: translateY(0.1rem);
+}

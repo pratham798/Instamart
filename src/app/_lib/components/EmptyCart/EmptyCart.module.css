@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.imgWrapper {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+}
+
+.footer {
+  font-size: var(--h5-size);
+  color: var(--dark-font-color);
+  font-weight: var(--bold-font-weight);
+
+  @media screen and (max-width: 768px) {
+    font-size: var(--h6-size);
+  }
+}

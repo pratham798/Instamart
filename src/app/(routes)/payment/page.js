@@ -1,7 +1,7 @@
-import PaymentPage from "@/app/_pages/payment/PaymentsPage"
+// import PaymentPage from "@/app/_pages/payment/PaymentsPage"
 
 export default function Payment() {
   return (
-    <PaymentPage />
+    <div>yoo</div>
   )
 }
