@@ -8,8 +8,11 @@
   padding: 1.6rem;
   gap: 1.2rem;
   height: max-content;
+  position: sticky;
+  top: 2.4rem;
 
   @media screen and (max-width: 768px) {
+    position: static;
     border-radius: unset;
     min-width: unset;
   }

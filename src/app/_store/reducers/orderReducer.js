@@ -13,7 +13,7 @@ export const fetchOrderData = createAsyncThunk('order/fetchOrder',  async () => 
 
 const initialState = {
   orderItems: [],
-  totalAmount: '',
+  orderAmount: 0,
   paymentMethods: [],
   orderPaymentMethod: '',
   orderStatus: 'pending',
@@ -24,7 +24,54 @@ const initialState = {
 export const orderReducer = createSlice({
   name: 'order',
   initialState,
-  reducers: {},
+  reducers: {
+    increaseQuantity: (state, action) => {
+      const productId = action.payload;
+      const updatedOrderItems = state.orderItems.map(item => {
+        if (item.id === productId) return { ...item, quantity: item.quantity + 1};
+        return item;
+      });
+      const updatedProduct = updatedOrderItems.find(item => item.id === productId);
+      const newTotalAmount = state.orderAmount + updatedProduct.price;
+
+      return {
+        ...state,
+        orderItems: updatedOrderItems,
+        orderAmount: newTotalAmount,
+      };
+    },
+    decreaseQuantity: (state, action) => {
+      const productId = action.payload;
+      const updatedOrderItems = state.orderItems.map(item => {
+        if (item.id === productId) return { ...item, quantity: item.quantity - 1};
+        return item;
+      });
+      const updatedProduct = updatedOrderItems.find(item => item.id === productId);
+      if(updatedProduct.quantity < 1) return state;
+      const newTotalAmount = state.orderAmount - updatedProduct.price;
+
+      return {
+        ...state,
+        orderItems: updatedOrderItems,
+        orderAmount: newTotalAmount,
+      };
+    },
+    removeItem: (state, action) => {
+      const removedObject = state.orderItems.find(orderItem => orderItem.id === action.payload);
+      if(removedObject) {
+        const totalPriceReduced = removedObject.quantity * removedObject.price;
+        const updatedAmount = state.orderAmount - totalPriceReduced;
+        const updatedOrderItems = state.orderItems.filter(orderItem => orderItem.id !== action.payload);
+
+        return {
+          ...state,
+          orderAmount: updatedAmount,
+          orderItems: updatedOrderItems,
+        }
+      }
+      return state;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchOrderData.pending, (state) => {
      state.isLoading = true;
@@ -44,6 +91,6 @@ export const orderReducer = createSlice({
   },
 });
 
-export const { selectPaymentMethod } = orderReducer.actions;
+export const { increaseQuantity, decreaseQuantity, removeItem, selectPaymentMethod } = orderReducer.actions;
 
 export default orderReducer.reducer;

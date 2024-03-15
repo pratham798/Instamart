@@ -38,6 +38,28 @@
   }
 }
 
+.other {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.quantity {
+  display: inline-flex;
+  gap: 0.8rem;
+  align-items: center;
+  border: 0.1rem solid black;
+  border-radius: 1rem;
+  padding: 0.2rem;
+}
+
+.quantity > img {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
 .right {
   cursor: pointer;
 }

@@ -15,8 +15,7 @@ export default function CheckoutPage() {
 
   useEffect(() => {
    dispatch(fetchOrderData());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]);
+  },[dispatch]);
 
   const order = useSelector((state) => ({
     orderItems: state?.order?.orderItems,
@@ -37,6 +36,7 @@ export default function CheckoutPage() {
                 return(
                   <ItemCard 
                     key={order.id}
+                    itemId={order.id}
                     name={order.title}
                     image={order.image}
                     price={order.price}
