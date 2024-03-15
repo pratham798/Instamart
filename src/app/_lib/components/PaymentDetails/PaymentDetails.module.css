@@ -57,6 +57,7 @@
   text-align: center;
   cursor: pointer;
   transition: all .2s ease;
+  text-decoration: none;
 }
 
 .payment:focus {

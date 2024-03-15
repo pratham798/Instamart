@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import BrandLogo from '@/app/_lib/assets/webp/instapayment.webp'
+import BrandLogo from '@/app/_lib/assets/webp/instapayment.webp';
 import styles from './Header.module.css';
 
 export default function Header({HeaderTitle}) {

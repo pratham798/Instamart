@@ -2,6 +2,7 @@
 
 import { useSelector } from "react-redux";
 import styles from './PaymentDetails.module.css';
+import Link from "next/link";
 
 export default function PaymentDetails({orderAmount}) {
   const userData = useSelector((state) => ({
@@ -27,9 +28,9 @@ export default function PaymentDetails({orderAmount}) {
         <span>Grand Total</span>
         <span>{`Price: $${parseFloat(orderAmount) + 15}`}</span>
       </div>
-      <div className={`${styles.payment} ${!userDataFilled && styles.disabled}`}> 
+      <Link href="/payment" className={`${styles.payment} ${!userDataFilled && styles.disabled}`}> 
         Proceed to Payment
-      </div>
+      </Link>
     </div>
   );
 }

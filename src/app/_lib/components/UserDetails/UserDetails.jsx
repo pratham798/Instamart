@@ -4,7 +4,9 @@ import { useState } from 'react';
 import { useDispatch } from "react-redux";
 import Image from 'next/image';
 import { setUserInfo } from '@/app/_store/reducers/userReducer';
-import plusIcon from '@/app/_lib/assets/svg/plus.svg';
+import userIcon from '@/app/_lib/assets/svg/user.svg';
+import landmarkIcon from '@/app/_lib/assets/svg/landmark.svg';
+import callIcon from '@/app/_lib/assets/svg/call.svg';
 import styles from './UserDetails.module.css';
 
 export default function UserDetails() {
@@ -51,7 +53,7 @@ export default function UserDetails() {
       <div className={styles.header}> Delivery Details </div>
       <form onSubmit={handleSubmit} className={styles.details}>
         <div className={styles.content}>
-          <Image src={plusIcon} alt="delete" />
+          <Image src={userIcon} alt="delete" />
           <input
             type='text'
             className={styles.fieldInput}
@@ -64,7 +66,7 @@ export default function UserDetails() {
           />
         </div>
         <div className={styles.content}>
-          <Image src={plusIcon} alt="delete" />
+          <Image src={callIcon} alt="delete" />
           <div className={styles.formBoundary}>
             <input
               type="tel"
@@ -80,7 +82,7 @@ export default function UserDetails() {
           </div>
         </div>
         <div className={styles.content}>
-          <Image src={plusIcon} alt="delete" />
+          <Image src={landmarkIcon} alt="delete" />
           <textarea
             placeholder='Enter your Address'
             className={styles.fieldArea}

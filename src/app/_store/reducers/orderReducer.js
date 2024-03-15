@@ -15,8 +15,8 @@ const initialState = {
   orderItems: [],
   orderAmount: 0,
   paymentMethods: [],
-  orderPaymentMethod: '',
-  orderStatus: 'pending',
+  orderPaymentMethod: 'COD',
+  orderStatus: 'success',
   isLoading: true,
   isError: false,
 };
@@ -71,6 +71,10 @@ export const orderReducer = createSlice({
       }
       return state;
     },
+    selectPaymentMethod: (state, action) => ({
+      ...state,
+      orderPaymentMethod: action.payload,
+    })
   },
   extraReducers: (builder) => {
     builder.addCase(fetchOrderData.pending, (state) => {
