@@ -37,10 +37,12 @@
   min-height: 30rem;
   border-radius: 1rem;
   background: var(--primary-bg-color);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 
   @media screen and (max-width: 768px) {
     border-radius: unset;
     min-height: unset;
+    box-shadow: none;
   }
 }
 
