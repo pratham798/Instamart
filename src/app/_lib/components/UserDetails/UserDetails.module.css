@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  background: var(--primary-bg-color);
+  padding: 1.6rem;
+  gap: 1.2rem;
+
+  @media screen and (max-width: 768px) {
+    border-radius: unset;
+  }
+}
+
+.header {
+  font-size: var(--h4-size);
+  font-weight: var(--bold-font-weight);
+  color: var(--dark-font-color);
+
+  @media screen and (max-width: 768px) {
+    font-size: var(--h5-size);
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.content {
+  display: flex;
+
+  gap: 0.8rem;
+  align-items: center;
+  flex: 1;
+  min-width: 15rem;
+}
+
+.fieldInput {
+  padding: 0.4rem;
+  transition: all .2s ease;
+  border: 0.1rem solid #c5ccd6;
+  border-radius: 0.4rem;
+  width: 100%;
+}
+
+.fieldArea {
+  padding: 0.4rem;
+  transition: all .2s ease;
+  border: 0.1rem solid #c5ccd6;
+  border-radius: 0.4rem;
+  resize: none;
+  height: 2rem;
+  line-height: 1.2rem;
+  width: 100%;
+}
+
+.fieldInput:focus, .fieldInput:hover {
+  border-color: var(--dark-font-color);
+  outline: 0;
+}
+
+.fieldArea:focus, .fieldArea:hover {
+  border-color: var(--dark-font-color);
+  outline: 0;
+  height: 4rem;
+  white-space: unset;
+  overflow: unset;
+  text-overflow: unset;
+}
+
+.fieldSubmit {
+  background-color: var(--secondary-bg-color);
+  color: var(--light-font-color);
+  font-size: var(--h7-size);
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  margin-left: auto;
+}

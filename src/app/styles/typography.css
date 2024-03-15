@@ -1,10 +1,10 @@
 :root {
   /* Color Pallete */
-  --color-primary: red;
-  --color-secondary: #fff;
   --base-color: #eff3f6;
   --primary-bg-color: #ffffff;
+  --secondary-bg-color: #000000;
   --dark-font-color: #000000;
+  --light-font-color: #ffffff;
 
   /* Font Weights */
   --default-font-weight: 400;
@@ -33,4 +33,10 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.hide-in-mobile {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
