@@ -34,6 +34,7 @@
   justify-content: space-between;
   font-size: var(--h6-size);
   color: var(--dark-font-color);
+  font-weight: var(--light-font-weight);
   gap: 1.2rem;
 }
 

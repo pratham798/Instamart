@@ -20,9 +20,9 @@ export default function ItemCard({ itemId, name, image, price, quantity}) {
         <Image  fill={true} src={image} alt="product_image" />
       </div>
       <div className={styles.info}>
-        <span>{name}</span>
+        <span className={styles.header}>{name}</span>
         <div className={styles.other}>
-          <span className={styles.price}>{`Price: ${price} $`}</span>
+          <span className={styles.price}>Price per item:<b>{` $${price}`}</b></span>
           <span className={styles.quantity}>
             <Image src={minusIcon} alt="add" onClick={decreaseOrderItem} />
               <span>{quantity}</span>
