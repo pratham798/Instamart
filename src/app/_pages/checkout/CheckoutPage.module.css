@@ -1,12 +1,16 @@
 .checkoutContainer {
   display: flex;
-  flex-direction: column;
   gap: 1.2rem;
   padding: 2.4rem;
   background-color: var(--base-color);
   height: calc(100% - 5rem);
 
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+  }
+
   @media screen and (max-width: 768px) {
+    gap: unset;
     padding: 0;
   }
 }
@@ -16,6 +20,7 @@
   flex-direction: column;
   gap: 1.2rem;
   height: 100%;
+  width: 100%;
 
   @media screen and (max-width: 768px) {
     padding: 0;

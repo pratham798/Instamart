@@ -8,6 +8,7 @@ import ItemCard from "@/app/_lib/components/ItemCart/ItemCard";
 import styles from './CheckoutPage.module.css';
 import EmptyCart from "@/app/_lib/components/EmptyCart/EmptyCart";
 import UserDetails from "@/app/_lib/components/UserDetails/UserDetails";
+import PaymentDetails from "@/app/_lib/components/PaymentDetails/PaymentDetails";
 
 export default function CheckoutPage() {
   const dispatch = useDispatch();
@@ -17,7 +18,12 @@ export default function CheckoutPage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
-  const orderDetails = useSelector((state) => state.order.orderItems)
+  const order = useSelector((state) => ({
+    orderItems: state.order.orderItems,
+    orderAmount: state.order.orderAmount.toFixed(2)
+  }));
+
+  const orderDetails = order?.orderItems;
 
   return (
     <div className={styles.checkoutContainer}>
@@ -44,7 +50,7 @@ export default function CheckoutPage() {
           </div>
         </div>
       </div>
-      <div className={styles.right}></div>
+      {orderDetails?.length > 0 && <PaymentDetails orderAmount={order?.orderAmount}/>}
     </div>
   );
 }

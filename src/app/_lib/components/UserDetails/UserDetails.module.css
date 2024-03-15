@@ -26,6 +26,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1.2rem;
+  align-items: center;
 }
 
 .content {
@@ -34,7 +35,11 @@
   gap: 0.8rem;
   align-items: center;
   flex: 1;
-  min-width: 15rem;
+  min-width: 20rem;
+
+  @media screen and (max-width: 768px) {
+    min-width: unset;
+  }
 }
 
 .fieldInput {
@@ -77,4 +82,9 @@
   border-radius: 0.4rem;
   padding: 0.5rem 1rem;
   margin-left: auto;
+  cursor: pointer;
+}
+
+.fieldSubmit:focus {
+  transform: translateY(0.1rem);
 }
