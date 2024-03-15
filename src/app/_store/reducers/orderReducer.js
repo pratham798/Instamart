@@ -5,12 +5,15 @@ import shopping from '@/app/_lib/api/shopping';
 
 export const fetchOrderData = createAsyncThunk('order/fetchOrder',  async () => {
     const response = await shopping.getInitialData();
+    const orderAmount = response?.products?.reduce((acc, product) => acc + (product.price * product.quantity), 0);
+    response.orderAmount = orderAmount;
     return response;
   },
 );
 
 const initialState = {
   orderItems: [],
+  totalAmount: '',
   paymentMethods: [],
   orderPaymentMethod: '',
   orderStatus: 'pending',
@@ -31,6 +34,7 @@ export const orderReducer = createSlice({
      state.isLoading = false;
      state.isError = false;
      state.orderItems = action.payload.products;
+     state.orderAmount = action.payload.orderAmount;
      state.paymentMethods = action.payload.paymentMethods;
     })
     builder.addCase(fetchOrderData.rejected, (state) => {

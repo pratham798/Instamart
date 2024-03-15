@@ -12,15 +12,11 @@ export default function PaymentDetails({orderAmount}) {
       </div>
       <div className={styles.breakdown}> 
         <span>Delivery Fee</span>
-        <span>$15</span>
-      </div>
-      <div className={styles.breakdown}> 
-        <span>Discount</span>
-        <span>-$100</span>
+        <span>+$15</span>
       </div>
       <div className={styles.breakdown}> 
         <span>Grand Total</span>
-        <span>{`Price: $${orderAmount}`}</span>
+        <span>{`Price: $${orderAmount+15}`}</span>
       </div>
       <div className={styles.payment}> Proceed to Payment </div>
     </div>
