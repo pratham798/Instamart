@@ -44,7 +44,6 @@ export const orderReducer = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { selectPaymentMethod } = orderReducer.actions;
 
 export default orderReducer.reducer;

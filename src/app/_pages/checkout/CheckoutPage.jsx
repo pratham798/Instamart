@@ -19,8 +19,8 @@ export default function CheckoutPage() {
   },[]);
 
   const order = useSelector((state) => ({
-    orderItems: state.order.orderItems,
-    orderAmount: state.order.orderAmount.toFixed(2)
+    orderItems: state?.order?.orderItems,
+    orderAmount: state?.order?.orderAmount?.toFixed(2)
   }));
 
   const orderDetails = order?.orderItems;

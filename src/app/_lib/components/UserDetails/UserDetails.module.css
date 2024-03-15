@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  border-radius: 2rem;
+  border-radius: 1rem;
   background: var(--primary-bg-color);
   padding: 1.6rem;
   gap: 1.2rem;
@@ -26,20 +26,27 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1.2rem;
-  align-items: center;
 }
 
 .content {
   display: flex;
 
   gap: 0.8rem;
-  align-items: center;
   flex: 1;
   min-width: 20rem;
+  height: max-content;
 
   @media screen and (max-width: 768px) {
-    min-width: unset;
+    width: 100%;
   }
+}
+
+.content > :first-child {
+  margin-top: 0.1rem;
+}
+
+.formBoundary {
+  width: 100%;
 }
 
 .fieldInput {
@@ -48,6 +55,11 @@
   border: 0.1rem solid #c5ccd6;
   border-radius: 0.4rem;
   width: 100%;
+}
+
+.error {
+  font-size: 0.8rem;
+  color: var(--highlight-font-color);
 }
 
 .fieldArea {
@@ -83,8 +95,14 @@
   padding: 0.5rem 1rem;
   margin-left: auto;
   cursor: pointer;
+  height: max-content;
 }
 
 .fieldSubmit:focus {
   transform: translateY(0.1rem);
+}
+
+.fieldError {
+  border-color: var(--highlight-font-color) !important;
+  outline: 0;
 }
