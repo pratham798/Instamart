@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectPaymentMethod } from "@/app/_store/reducers/orderReducer";
 import upiIcon from '@/app/_lib/assets/svg/upi.svg';
@@ -61,7 +61,7 @@ export default function PaymentPage() {
             <span>Payment Mode:</span>
             <span>{selectedPaymentMethod}</span>
           </div>
-          <Link href="/payment/status" className={`${styles.confirmation}`} status={payment.status}> 
+          <Link href="/payment/status" className={`${styles.confirmation}`}> 
             Confirm Order
           </Link>
         </div>
